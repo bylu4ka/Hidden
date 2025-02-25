@@ -15,6 +15,14 @@
 <body>
 
   <header class="hero-section">
+    <ul class="nav-bar">
+      <li class="nav-list">Афіша</li>
+      <li class="nav-list">Доставка</li>
+      <li class="nav-list">Банкети</li>
+      <li class="nav-list">Контакти</li>
+      <li class="nav-list">Меню</li>
+      <li class="nav-list">Галерея</li>
+    </ul>
     <div class="hero-background"></div>
     <div class="hero-content">
       <div class="logo-container">
@@ -32,17 +40,19 @@
   <main>
     <button id="scrollToTop" class="scroll-top-btn">&#8679;</button>
     <section class="weekly-event">
-      <div class="event-container">
-        <img src="./img/heroEvents.jpg" alt="mainFoto">
-        <ul class="delivery-text">
-          <li>Проведи свій вечір з нами!</li>
-          <li>Запрошуємо вас на унікальні заходи:</li>
-          <li>Мафія – випробуй свої навички детектива</li>
-          <li>Дегустація вин – відкрий для себе нові смаки</li>
-          <li>Кіно-вечір – атмосферний перегляд у затишній компанії</li>
-          <li>Приходь за яскравими емоціями та незабутніми враженнями!</li>
-        </ul>
+      <div class="carousel">
+        <div class="slides">
+          <div class="slide" style="background-image: url('./img/mafia.jpg');">Мафія – випробуй свої навички детектива
+          </div>
+          <div class="slide" style="background-image: url('./img/heroEvents.jpg');">Дегустація вин – відкрий для себе
+            нові смаки</div>
+          <div class="slide" style="background-image: url('./img/films.jpg');">Кіно-вечір – атмосферний перегляд у
+            затишній компанії</div>
+        </div>
+        <button class="arrow prev">&#10094;</button>
+        <button class="arrow next">&#10095;</button>
       </div>
+      <div class="dots"></div>
 
       <div class=" delivery-block">
         <ul class="delivery-text">
