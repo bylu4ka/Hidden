@@ -16,20 +16,21 @@
 
   <header class="hero-section">
     <ul class="nav-bar">
-      <li class="nav-list">Афіша</li>
+      <li class="nav-list">
+        <a href="https://hidden1.choiceqr.com/?fbclid=PAZXh0bgNhZW0CMTEAAaZLrCfGvBhkN27Krt6TWac1jJkB5-5NFY2ORO-Qt-AgVir8JdTTBbzcDhw_aem_e18x_XKf2jl8HkbYtDRmKQ"
+          class="menu-button">Меню</a>
+      </li>
+      <li class="nav-list"><a href="#carousel" class="menu-button">Афіша</a></li>
+      <li class="nav-list"><a href="#banket" class="menu-button">Банкети</a></li>
       <li class="nav-list">Доставка</li>
-      <li class="nav-list">Банкети</li>
-      <li class="nav-list">Контакти</li>
-      <li class="nav-list">Меню</li>
-      <li class="nav-list">Галерея</li>
+      <li class="nav-list"><a href="#galery" class="menu-button">Галерея</a></li>
+      <li class="nav-list"><a href="#contacts" class="menu-button">Контакти</a></li>
     </ul>
     <div class="hero-background"></div>
     <div class="hero-content">
       <div class="logo-container">
         <img src="./img/logoGreen-Smal.png" alt="Hidden Rest Logo" class="logo">
       </div>
-      <a href="https://hidden1.choiceqr.com/?fbclid=PAZXh0bgNhZW0CMTEAAaZLrCfGvBhkN27Krt6TWac1jJkB5-5NFY2ORO-Qt-AgVir8JdTTBbzcDhw_aem_e18x_XKf2jl8HkbYtDRmKQ"
-        class="menu-button">Меню</a>
     </div>
     <div class="hero-arrows">
       <img src="./img/icons8-шеврон-вниз-16.png" alt="">
@@ -39,7 +40,7 @@
 
   <main>
     <button id="scrollToTop" class="scroll-top-btn">&#8679;</button>
-    <section class="weekly-event">
+    <section id="carousel" class="weekly-event">
       <div class="carousel">
         <div class="slides">
           <div class="slide" style="background-image: url('./img/mafia.jpg');">Мафія – випробуй свої навички детектива
@@ -55,20 +56,18 @@
       <div class="dots"></div>
 
       <div class=" delivery-block">
-        <ul class="delivery-text">
-          <li>Доставка смаку до твоїх дверей!</li>
-          <li>Замовляй улюблені страви з Hidden через Glovo, Bolt,</li>
-          <li> Choice або напряму у нас!</li>
-          <li>Хочеш отримати замовлення ще швидше?</li>
-          <li>Ми відправимо кур’єром або навіть таксі!</li>
-          <li>Безкоштовна доставка на таксі при замовленні від 1000 грн!</li>
-          <li>Смачно, легко, без зайвих очікувань!</li>
+        <ul id="banket" class="delivery-text">
+          <li>Маємо банкетне та фуршетне меню, багатий вибір напоїв на барі</li>
+          <li>А на день народження даруємо знижку 15% </li>
+          <li>Хочете влаштувати закрите свято? Легко! </li>
+          <li>Ми можемо закрити весь заклад під вас.</li>
+          <li>Ми можемо втілити будь-яке ваше побажання! Чекаємо на вас!</li>
         </ul>
         <video style="max-width: 1056px; max-height: 516px;" autoplay loop muted>
           <source src="./img/videoDeliverynce.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="food-block">
+      <div id="galery" class="food-block">
         <div class="additional-foto">
           <img src="./img/pizza.jpg" alt="pizza">
           <img src="./img/cutlets.jpg" alt="cutlets">
@@ -85,7 +84,7 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer id="contacts" class="footer">
     <div class="footer-column">
       <a href="tel:+380930012222" class="footer-phone">+38 (093) 001 22 22</a>
       <ul class="footer-address">
@@ -103,6 +102,14 @@
       <div>
         <span class="instagram-label">Наш Instagram:</span>
         <a href="https://www.instagram.com/hidden.rest" class="instagram-link" target="_blank">hidden.rest</a>
+      </div>
+      <div>
+        <span class="instagram-label">Наш Telegram Hidden:</span>
+        <a href="https://t.me/Hiddenkiev" class="instagram-link" target="_blank">Telegram</a>
+      </div>
+      <div>
+        <span class="instagram-label">Наш Telegram Hidden 2.0:</span>
+        <a href="https://t.me/HIDDENkiev_2" class="instagram-link" target="_blank">Telegram</a>
       </div>
       <ul class="footer-hours">
         <li class="footer-list"><strong>Графік</strong></li>

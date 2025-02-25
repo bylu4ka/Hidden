@@ -54,5 +54,17 @@ document.addEventListener("DOMContentLoaded", function () {
       updateCarousel();
     });
   });
+  document.querySelector('.menu-button').addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    const offset = -10;
+
+    window.scrollTo({
+      top: targetElement.offsetTop + offset,
+      behavior: 'smooth'
+    });
+  });
 });
 
