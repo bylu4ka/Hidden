@@ -28,13 +28,13 @@ body {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;
-  height: 25px;
+  width: 35px;
+  height: 30px;
   cursor: pointer;
-  z-index: 1100;
   position: fixed;
   top: 15px;
-  right: 20px;
+  left: 20px;
+  z-index: 1100;
 }
 
 .burger-menu div {
@@ -286,20 +286,24 @@ body {
   background-position: bottom;
 }
 .dots {
-  text-align: center;
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
 }
 .dot {
-  width: 10px;
-  height: 10px;
-  margin: 5px;
+  width: 12px;
+  height: 12px;
   background: gray;
   display: inline-block;
   border-radius: 50%;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 .dot.active {
   background: black;
+  transform: scale(1.2);
 }
 .arrow {
   position: absolute;
@@ -590,6 +594,41 @@ body {
   .footer-hours {
     font-size: 12px;
   }
+  .burger-menu {
+    display: flex;
+  }
+  .nav-bar {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background: #222;
+    transition: right 0.3s ease;
+    align-items: center;
+    padding-top: 50px;
+    display: none;
+  }
+
+  .nav-bar.active {
+    right: 0;
+    display: flex;
+    height: auto;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .nav-list {
+    padding: 15px;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+  }
+  .lang-select {
+    width: 15%;
+    padding: 0;
+  }
 }
 
 @media (max-width: 576px) {
@@ -618,6 +657,6 @@ body {
     padding: 0;
   }
   .delivery-info {
-    padding-left: 30px;
+    padding-left: 20px;
   }
 }
