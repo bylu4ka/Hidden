@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hidden Rest</title>
+  <title class="delivery-list">Hidden Rest</title>
   <link rel="icon" type="image/png" sizes="64x64" href="./img/Hidden_Logo.svg">
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./style.css">
@@ -15,16 +15,26 @@
 <body>
 
   <header class="hero-section">
+    <div class="burger-menu" id="burger-menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <ul class="nav-bar">
-      <li class="nav-list"><a href="#carousel" class="menu-button">Афіша</a></li>
-      <li class="nav-list"><a href="#banket" class="menu-button">Банкети</a></li>
+      <li class="nav-list"><a href="#carousel" class="menu-button" data-translate="afisha">Афіша</a></li>
+      <li class="nav-list"><a href="#banket" class="menu-button" data-translate="banket">Банкети</a></li>
       <li class="nav-list">
         <a href="https://hidden1.choiceqr.com/?fbclid=PAZXh0bgNhZW0CMTEAAaZLrCfGvBhkN27Krt6TWac1jJkB5-5NFY2ORO-Qt-AgVir8JdTTBbzcDhw_aem_e18x_XKf2jl8HkbYtDRmKQ"
-          class="menu-button">Меню</a>
+          class="menu-button" data-translate="menu">Меню</a>
       </li>
-      <li class="nav-list">Доставка</li>
-      <li class="nav-list"><a href="#galery" class="menu-button">Галерея</a></li>
-      <li class="nav-list"><a href="#contacts" class="menu-button">Контакти</a></li>
+      <li class="nav-list"><a href="#delivery" class="menu-button" data-translate="delivery">Доставка</a></li>
+      <li class="nav-list"><a href="#galery" class="menu-button" data-translate="gallery">Галерея</a></li>
+      <li class="nav-list"><a href="#contacts" class="menu-button" data-translate="contacts">Контакти</a></li>
+      <select id="lang-select" class="lang-select nav-list">
+        <option value="uk">UA</option>
+        <option value="ru">RU</option>
+        <option value="en">EN</option>
+      </select>
     </ul>
     <div class="hero-background"></div>
     <div class="hero-content">
@@ -43,29 +53,48 @@
     <section id="carousel" class="weekly-event">
       <div class="carousel">
         <div class="slides">
-          <div class="slide" style="background-image: url('./img/mafia.jpg');">Мафія – випробуй свої навички детектива
-          </div>
-          <div class="slide" style="background-image: url('./img/heroEvents.jpg');">Дегустація вин – відкрий для себе
-            нові смаки</div>
-          <div class="slide" style="background-image: url('./img/films.jpg');">Кіно-вечір – атмосферний перегляд у
-            затишній компанії</div>
+          <div class="slide" style="background-image: url('./img/mafia.jpg');" data-translate="mafia-slide">Мафія –
+            випробуй свої навички детектива</div>
+          <div class="slide" style="background-image: url('./img/heroEvents.jpg');" data-translate="tasting-slide">
+            Дегустація вин – відкрий для себе нові смаки</div>
+          <div class="slide" style="background-image: url('./img/films.jpg');" data-translate="movie-slide">Кіно-вечір –
+            атмосферний перегляд у затишній компанії</div>
         </div>
         <button class="arrow prev">&#10094;</button>
         <button class="arrow next">&#10095;</button>
       </div>
       <div class="dots"></div>
 
-      <div class=" delivery-block">
-        <ul id="banket" class="delivery-text">
-          <li>Маємо банкетне та фуршетне меню, багатий вибір напоїв на барі</li>
-          <li>А на день народження даруємо знижку 15% </li>
-          <li>Хочете влаштувати закрите свято? Легко! </li>
-          <li>Ми можемо закрити весь заклад під вас.</li>
-          <li>Ми можемо втілити будь-яке ваше побажання! Чекаємо на вас!</li>
+      <div class=" banket-block">
+        <ul id="banket" class="banket-text">
+          <li data-translate="banquet-menu">Маємо банкетне та фуршетне меню, багатий вибір напоїв на барі</li>
+          <li data-translate="birthday-discount">А на день народження даруємо знижку 15%</li>
+          <li data-translate="closed-event">Хочете влаштувати закрите свято? Легко!</li>
+          <li data-translate="closed-facility">Ми можемо закрити весь заклад під вас.</li>
+          <li data-translate="custom-requests">Ми можемо втілити будь-яке ваше побажання! Чекаємо на вас!</li>
         </ul>
-        <video style="max-width: 1056px; max-height: 516px;" autoplay loop muted>
-          <source src="./img/videoDeliverynce.mp4" type="video/mp4">
-        </video>
+      </div>
+      <div id="delivery" class="delivery-block">
+        <ul class="delivery-ul">
+          <li class="delivery-list">Hidden</li>
+          <li class="delivery-list"><a href="#">Bolt</a></li>
+          <li class="delivery-list"><a href="#">Glovo</a></li>
+          <li class="delivery-list"><a href="#">Choise</a></li>
+        </ul>
+        <div class="delivery-description">
+          <span class="delivery-info" data-translate="delivery-title">Доставка смаку до твоїх дверей!</span>
+          <video style="max-width: 1056px; max-height: 516px;" autoplay loop muted>
+            <source src="./img/videoDeliverynce.mp4" type="video/mp4">
+          </video>
+          <span class="delivery-info" data-translate="free-delivery">Безкоштовна доставка на замовлення від
+            1000грн</span>
+        </div>
+        <ul class="delivery-ul">
+          <li class="delivery-list">Hidden 2.0</li>
+          <li class="delivery-list"><a href="#">Bolt</a></li>
+          <li class="delivery-list"><a href="#">Glovo</a></li>
+          <li class="delivery-list"><a href="#">Choise</a></li>
+        </ul>
       </div>
       <div id="galery" class="food-block">
         <div class="additional-foto">
@@ -86,51 +115,59 @@
 
   <footer id="contacts" class="footer">
     <div class="footer-column">
-      <a href="tel:+380930012222" class="footer-phone">+38 (093) 001 22 22</a>
+      <a href="tel:+380930012222" class="footer-phone" data-translate="phone1">+38 (093) 001 22 22</a>
       <ul class="footer-address">
-        <li class="footer-list"><strong>Адреса</strong></li>
-        <li class="footer-list">Hidden 1</li>
-        <li class="footer-list">Січових стрільців 22</li>
+        <li class="footer-list" data-translate="address-header"><strong>Адреса</strong></li>
+        <li class="footer-list delivery-list" data-translate="address-1">Hidden 1</li>
+        <li class="footer-list" data-translate="address-2">Січових стрільців 22</li>
+        <div class="footer-telegram">
+          <span class="instagram-label" data-translate="telegram-label">Наш Telegram:</span>
+          <a href="https://t.me/Hiddenkiev" class="instagram-link" target="_blank" data-translate="telegram-link"><img
+              src="./img/telegram.png" alt="telegram-logo" width="24px" height="24px"></a>
+        </div>
       </ul>
+
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.1686221720424!2d30.49475298710027!3d50.45658461368881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce66edb55283%3A0x2a0e270c6f622a1!2z0LLRg9C70LjRhtGPINCh0ZbRh9C-0LLQuNGFINCh0YLRgNGW0LvRjNGG0ZbQsiwgMjIsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1suk!2sua!4v1739543898256!5m2!1suk!2sua"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.1688001133466!2d30.499623900000003!3d50.4565813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce66edb55283%3A0x2a0e270c6f622a1!2z0LLRg9C70LjRhtGPINCh0ZbRh9C-0LLQuNGFINCh0YLRgNGW0LvRjNGG0ZbQsiwgMjIsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1suk!2sua!4v1740592327481!5m2!1suk!2sua"
         width="331" height="309" style="border:0;" allowfullscreen="" loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <div class="footer-column">
-      <div>
-        <span class="instagram-label">Наш Instagram:</span>
-        <a href="https://www.instagram.com/hidden.rest" class="instagram-link" target="_blank">hidden.rest</a>
+      <div class="footer-inst">
+        <span class="instagram-label" data-translate="instagram-label">Наш Instagram:</span>
+        <a href="https://www.instagram.com/hidden.rest" class="instagram-link" target="_blank"
+          data-translate="instagram-link"><img src="./img/ist.png" alt="inst-logo" width="24px" height="24px"></a>
       </div>
-      <div>
-        <span class="instagram-label">Наш Telegram Hidden:</span>
-        <a href="https://t.me/Hiddenkiev" class="instagram-link" target="_blank">Telegram</a>
-      </div>
-      <div>
-        <span class="instagram-label">Наш Telegram Hidden 2.0:</span>
-        <a href="https://t.me/HIDDENkiev_2" class="instagram-link" target="_blank">Telegram</a>
-      </div>
+
       <ul class="footer-hours">
-        <li class="footer-list"><strong>Графік</strong></li>
-        <li class="footer-list">Пн-Чт: 10:00 - 22:00</li>
-        <li class="footer-list">Пт-Нд: 10:00 - 23:00</li>
+        <li class="footer-list" data-translate="hours-header"><strong>Графік</strong></li>
+        <li class="footer-list" data-translate="hours-weekday">Пн-Чт: 10:00 - 22:00</li>
+        <li class="footer-list" data-translate="hours-weekend">Пт-Нд: 10:00 - 23:00</li>
       </ul>
     </div>
 
     <div class="footer-column">
-      <a href="tel:+380730055553" class="footer-phone">+38 (073) 005 55 53</a>
+      <a href="tel:+380730055553" class="footer-phone" data-translate="phone2">+38 (073) 005 55 53</a>
       <ul class="footer-address">
-        <li class="footer-list"><strong>Адреса</strong></li>
-        <li class="footer-list">Hidden 2.0</li>
-        <li class="footer-list">Жилянська 55</li>
+        <li class="footer-list" data-translate="address-header2"><strong>Адреса</strong></li>
+        <li class="footer-list delivery-list" data-translate="address-1-2">Hidden 2.0</li>
+        <li class="footer-list" data-translate="address-2-2">Жилянська 55</li>
+        <div class="footer-telegram">
+          <span class="instagram-label" data-translate="telegram-label2">Наш Telegram:</span>
+          <a href="https://t.me/HIDDENkiev_2" class="instagram-link" target="_blank"
+            data-translate="telegram-link2"><img src="./img/telegram.png" alt="telegram-logo" width="24px"
+              height="24px"></a>
+        </div>
       </ul>
+
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.186779951364!2d30.50112878211509!3d50.43762151205013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cef01f5c8619%3A0xcb2b440f55508b48!2z0LLRg9C70LjRhtGPINCW0LjQu9GP0L3RgdGM0LrQsCwgNTUsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1suk!2sua!4v1739543812993!5m2!1suk!2sua"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.195772688042!2d30.500890999999992!3d50.437453999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cef01f5c8619%3A0xcb2b440f55508b48!2z0LLRg9C70LjRhtGPINCW0LjQu9GP0L3RgdGM0LrQsCwgNTUsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1suk!2sua!4v1740592238366!5m2!1suk!2sua"
         width="331" height="309" style="border:0;" allowfullscreen="" loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </footer>
+
 </body>
 
 </html>
