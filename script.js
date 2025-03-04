@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const dotsContainer = document.querySelector(".dots");
   let index = 0;
 
-  // Генеруємо крапки для слайдера
   for (let i = 0; i < slidesCount; i++) {
     const dot = document.createElement("span");
     dot.classList.add("dot");
@@ -36,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const dots = document.querySelectorAll(".dot");
   dots[0].classList.add("active");
 
-  // Функція оновлення слайдера
   function updateCarousel() {
     slides.style.transform = `translateX(-${index * 100}%)`;
     dots.forEach(dot => dot.classList.remove("active"));
@@ -67,10 +65,10 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function (e) {
       const targetId = this.getAttribute("href");
 
-      if (targetId.startsWith("#")) { // Перевіряємо, чи це внутрішнє посилання
+      if (targetId.startsWith("#")) {
         e.preventDefault();
         const targetElement = document.querySelector(targetId);
-        const offset = 20;
+        const offset = 60;
 
         if (targetElement) {
           const targetPosition = targetElement.offsetTop - offset;
@@ -83,26 +81,32 @@ document.addEventListener("DOMContentLoaded", function () {
   // ======= Бургер-меню =======
   const burgerMenu = document.getElementById("burger-menu");
   const navBar = document.getElementById("nav-bar");
+  const navLinks = navBar.querySelectorAll("a"); // Отримуємо всі посилання в меню
 
   if (!burgerMenu || !navBar) {
-    console.error("❌ Burger menu або navbar не знайдено в DOM!");
     return;
   }
 
-  console.log("✅ Burger menu знайдено в DOM!");
 
   burgerMenu.addEventListener("click", function () {
-    console.log("✅ Клік по бургеру");
     burgerMenu.classList.toggle("active");
     navBar.classList.toggle("active");
   });
 
   document.addEventListener("click", function (event) {
     if (!navBar.contains(event.target) && !burgerMenu.contains(event.target)) {
-      console.log("✅ Клік поза меню – закриваємо");
+
       navBar.classList.remove("active");
       burgerMenu.classList.remove("active");
     }
+  });
+
+  // Закриваємо меню після кліку на будь-який пункт
+  navLinks.forEach(link => {
+    link.addEventListener("click", function () {
+      navBar.classList.remove("active");
+      burgerMenu.classList.remove("active");
+    });
   });
 
   // ======= Перемикання мови =======
@@ -138,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "closed-facility": "Ми можемо закрити весь заклад під вас.",
       "custom-requests": "Ми можемо втілити будь-яке ваше побажання! Чекаємо на вас!",
       "delivery-title": "Доставка смаку до твоїх дверей!",
+      "delivery-search": "Шукай нас тут",
       "free-delivery": "Безкоштовна доставка на замовлення від 1000грн",
       "phone1": "+38 (093) 001 22 22",
       "address-header": "Адреса",
@@ -173,6 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "closed-facility": "Мы можем закрыть весь ресторан для вас.",
       "custom-requests": "Мы можем выполнить любое ваше пожелание! Ждем вас!",
       "delivery-title": "Доставка вкуса прямо к вашим дверям!",
+      "delivery-search": "Ищи нас здесь",
       "free-delivery": "Бесплатная доставка при заказе от 1000грн",
       "phone1": "+38 (093) 001 22 22",
       "address-header": "Адрес",
@@ -208,6 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "closed-facility": "We can close the entire venue for you.",
       "custom-requests": "We can fulfill any of your requests! We are waiting for you!",
       "delivery-title": "Taste delivery to your door!",
+      "delivery-search": "Find us here",
       "free-delivery": "Free delivery for orders over 1000 UAH",
       "phone1": "+38 (093) 001 22 22",
       "address-header": "Address",

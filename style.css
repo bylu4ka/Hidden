@@ -230,13 +230,18 @@ body {
 .weekly-event {
   display: flex;
   flex-direction: column;
-  gap: 40px;
   align-items: center;
-  padding: 40px 0;
-  background-color: rgb(157, 149, 149);
   opacity: 0;
   animation: fadeInSite 2s ease-in-out forwards;
   animation-delay: 1s;
+  margin: 20px 0;
+}
+.carousel-content {
+  padding: 20px;
+  background: linear-gradient(183deg, #0f4c3a, #083723);
+  width: 80vw;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .carousel {
@@ -282,9 +287,10 @@ body {
   position: relative;
   z-index: 1;
 }
-.slide:last-child {
-  background-position: bottom;
+.slide:nth-child(2) {
+  background-position: top;
 }
+
 .dots {
   display: flex;
   justify-content: center;
@@ -332,7 +338,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px 50px;
+  margin: 40px 0;
+  background-color: #ffffff;
 }
 
 .banket-text {
@@ -346,7 +353,12 @@ body {
   align-items: center;
   justify-content: center;
   gap: 25px;
-  padding: 20px;
+  padding: 20px 0 40px;
+  margin: 20px 0 40px;
+  background: linear-gradient(135deg, #e0e0e0, #bbbbbb24);
+  width: 80vw;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .delivery-ul {
@@ -403,11 +415,17 @@ body {
 }
 
 .food-block {
+  padding: 40px 0;
+  width: 80vw;
   display: flex;
   flex-direction: column;
   gap: 15px;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, #1c1c1c, #00000024);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
 }
 
 /* Footer */
@@ -538,10 +556,6 @@ body {
     width: 300px;
   }
 
-  .weekly-event {
-    gap: 30px;
-    padding: 30px 0;
-  }
   .delivery-text {
     font-size: 14px;
   }
@@ -629,18 +643,21 @@ body {
     width: 15%;
     padding: 0;
   }
+  .carousel-content {
+    width: auto;
+  }
+  .delivery-block {
+    width: auto;
+  }
 }
 
 @media (max-width: 576px) {
   .hero-section {
     height: 80vh;
   }
-
-  .weekly-event {
-    gap: 20px;
-    padding: 20px 0;
+  .carousel-content {
+    width: -webkit-fill-available;
   }
-
   .footer-column {
     width: 100%;
     margin: 20px 0;
@@ -658,5 +675,8 @@ body {
   }
   .delivery-info {
     padding-left: 20px;
+  }
+  iframe {
+    width: -webkit-fill-available;
   }
 }

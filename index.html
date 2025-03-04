@@ -49,22 +49,26 @@
   </header>
 
   <main>
-    <button id="scrollToTop" class="scroll-top-btn">&#8679;</button>
-    <section id="carousel" class="weekly-event">
-      <div class="carousel">
-        <div class="slides">
-          <div class="slide" style="background-image: url('./img/mafia.jpg');" data-translate="mafia-slide">Мафія –
-            випробуй свої навички детектива</div>
-          <div class="slide" style="background-image: url('./img/heroEvents.jpg');" data-translate="tasting-slide">
-            Дегустація вин – відкрий для себе нові смаки</div>
-          <div class="slide" style="background-image: url('./img/films.jpg');" data-translate="movie-slide">Кіно-вечір –
-            атмосферний перегляд у затишній компанії</div>
-        </div>
-        <button class="arrow prev">&#10094;</button>
-        <button class="arrow next">&#10095;</button>
-      </div>
-      <div class="dots"></div>
 
+    <button id="scrollToTop" class="scroll-top-btn">&#8679;</button>
+    <section class="weekly-event">
+      <div id="carousel" class="carousel-content">
+        <div class="carousel">
+          <div class="slides">
+
+            <div class="slide" style="background-image: url('./img/heroEvents.jpg');" data-translate="tasting-slide">
+              Дегустація вин – відкрий для себе нові смаки</div>
+            <div class="slide" style="background-image: url('./img/films (2).jpg');" data-translate="movie-slide">
+              Кіно-вечір –
+              атмосферний перегляд у затишній компанії</div>
+            <div class="slide" style="background-image: url('./img/mafia.jpg');" data-translate="mafia-slide">Мафія –
+              випробуй свої навички детектива</div>
+          </div>
+          <button class="arrow prev">&#10094;</button>
+          <button class="arrow next">&#10095;</button>
+        </div>
+        <div class="dots"></div>
+      </div>
       <div class=" banket-block">
         <ul id="banket" class="banket-text">
           <li data-translate="banquet-menu">Маємо банкетне та фуршетне меню, багатий вибір напоїв на барі</li>
@@ -77,9 +81,10 @@
       <div id="delivery" class="delivery-block">
         <ul class="delivery-ul">
           <li class="delivery-list">Hidden</li>
-          <li class="delivery-list"><a href="#">Bolt</a></li>
-          <li class="delivery-list"><a href="#">Glovo</a></li>
-          <li class="delivery-list"><a href="#">Choise</a></li>
+          <li class="delivery-list" data-translate="delivery-search">Шукай нас тут</li>
+          <li class="delivery-list"><img src="./img/bolt.svg" alt=""></li>
+          <li class="delivery-list"><img src="./img/завантаження.jfif" alt="Glovo-icon" width="90px" height="54"></li>
+          <li class="delivery-list"><a href="https://hidden.choiceqr.com/">Choise</a></li>
         </ul>
         <div class="delivery-description">
           <span class="delivery-info" data-translate="delivery-title">Доставка смаку до твоїх дверей!</span>
@@ -91,9 +96,10 @@
         </div>
         <ul class="delivery-ul">
           <li class="delivery-list">Hidden 2.0</li>
-          <li class="delivery-list"><a href="#">Bolt</a></li>
-          <li class="delivery-list"><a href="#">Glovo</a></li>
-          <li class="delivery-list"><a href="#">Choise</a></li>
+          <li class="delivery-list" data-translate="delivery-search">Шукай нас тут</li>
+          <li class="delivery-list"><img src="./img/bolt.svg" alt=""></li>
+          <li class="delivery-list"><img src="./img/завантаження.jfif" alt="Glovo-icon" width="90px" height="54"></li>
+          <li class="delivery-list"><a href="https://hidden2-0.choiceqr.com/">Choise</a></li>
         </ul>
       </div>
       <div id="galery" class="food-block">
