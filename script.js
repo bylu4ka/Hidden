@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const slidesCount = document.querySelectorAll(".slide").length;
   const dotsContainer = document.querySelector(".dots");
   let index = 0;
+  let autoSlideInterval;
 
+  // Створення точок (індикаторів)
   for (let i = 0; i < slidesCount; i++) {
     const dot = document.createElement("span");
     dot.classList.add("dot");
@@ -41,24 +43,40 @@ document.addEventListener("DOMContentLoaded", function () {
     dots[index].classList.add("active");
   }
 
-  // Кнопки перемикання слайдів
+  function nextSlide() {
+    index = (index < slidesCount - 1) ? index + 1 : 0;
+    updateCarousel();
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, 4000); // 4 секунди
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
   document.querySelector(".prev").addEventListener("click", () => {
     index = (index > 0) ? index - 1 : slidesCount - 1;
     updateCarousel();
+    resetAutoSlide();
   });
 
   document.querySelector(".next").addEventListener("click", () => {
-    index = (index < slidesCount - 1) ? index + 1 : 0;
-    updateCarousel();
+    nextSlide();
+    resetAutoSlide();
   });
 
-  // Перемикання слайдів через крапки
   dots.forEach(dot => {
     dot.addEventListener("click", (e) => {
       index = parseInt(e.target.dataset.index);
       updateCarousel();
+      resetAutoSlide();
     });
   });
+
+  startAutoSlide();
 
   // ======= Плавна прокрутка при натисканні на меню =======
   document.querySelectorAll(".menu-button").forEach(button => {
